@@ -12,7 +12,8 @@ const projects = [
     title: 'Calculadora',
     description: 'Calculadora funcional utilizando vite+react',
     image: CalculadoraImage,
-    link: 'https://github.com/Isabella-22293/lab8-web.git'
+    link: 'https://calculadora-isabella.netlify.app/',
+    github: 'https://github.com/Isabella-22293/Calculadora.git'
   },
   {
     title: 'Backend',
@@ -54,7 +55,12 @@ const Projects = () => {
           <img src={project.image} alt={project.title} className="project-image" />
           <h3>{project.title}</h3>
           <p>{project.description}</p>
-          <a href={project.link} target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+          <div className="buttons">
+            <a href={project.link} target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+            {index === 0 && (
+              <a href={project.github} target="_blank" rel="noopener noreferrer">Código fuente</a>
+            )}
+          </div>
         </div>
       ))}
     </div>
